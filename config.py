@@ -7,8 +7,11 @@ from dataclasses import dataclass
 from datetime import date, timedelta
 from dotenv import load_dotenv
 
-# Load .env from the same directory as this file
-_env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
+# Load .env or .envPro based on ENV_MODE environment variable
+# Set ENV_MODE=prod on the production machine to use .envPro
+_base_dir = os.path.dirname(os.path.abspath(__file__))
+_env_file = ".envPro" if os.getenv("ENV_MODE", "").lower() == "prod" else ".env"
+_env_path = os.path.join(_base_dir, _env_file)
 load_dotenv(_env_path)
 
 
