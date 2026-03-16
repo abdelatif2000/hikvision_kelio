@@ -33,9 +33,9 @@ ABSENCE_CODE_ENTITE=3
 KELIO_ABSENCE_SOAP_URL=http://localhost:8089/open/services/AbsenceFileService?wsdl
 
 # --- Employee Sync DB (local DB with write access) ---
-EMPLOYEE_SYNC_DB_HOST=localhost
+EMPLOYEE_SYNC_DB_HOST=APPK-DB\MSSQLRHGRP
 EMPLOYEE_SYNC_DB_USER=sa
-EMPLOYEE_SYNC_DB_PASSWORD=dmin@7878
+EMPLOYEE_SYNC_DB_PASSWORD=Kel!02026*
 EMPLOYEE_SYNC_DB_NAME=Sync_interface_GED_KELIO
 EMPLOYEE_SYNC_DB_DRIVER=SQL Server
 EMPLOYEE_SYNC_TABLE=EmployeeSync
@@ -44,11 +44,11 @@ EMPLOYEE_SYNC_TABLE=EmployeeSync
 EMPLOYEE_SOURCE_LINKED_SERVER=SOURCE_SERVER_GEDRHP
 EMPLOYEE_SOURCE_DB=Interface_GED_KELIO
 EMPLOYEE_SOURCE_TABLE=Collaborateur
-EMPLOYEE_DEFAULT_SECTION=ZTT
+EMPLOYEE_DEFAULT_SECTION=Service
 # Optional: filter employees by Date_Embauche >= this value. Leave empty to fetch all.
-EMPLOYEE_DATE_EMBAUCHE_FROM=
+EMPLOYEE_DATE_EMBAUCHE_FROM=[System.Environment]::SetEnvironmentVariable("ENV_MODE", "prod", "Machine")
 # Comma-separated Entite_Juridique values to filter with LIKE %value% (empty = all)
-EMPLOYEE_ENTITE_JURIDIQUE=
+EMPLOYEE_ENTITE_JURIDIQUE=SOMAFACO
 
 # --- Kelio Employee SOAP Web Services ---
 KELIO_EMPLOYEE_SOAP_URL=http://localhost:8089/open/services/EmployeeService?wsdl
@@ -58,7 +58,7 @@ KELIO_EMPLOYEE_FIELD_SOAP_URL=http://localhost:8089/open/services/EmployeeFieldA
 SMTP_HOST=192.168.1.56
 SMTP_PORT=25
 SMTP_FROM=kelio@synergiesprogres.ma
-SMTP_TO=abdelatif.benichou@cbo.ma
+SMTP_TO=kelio@synergiesprogres.ma
 # Optional: leave empty for no authentication (internal relay)
 SMTP_USER=
 SMTP_PASSWORD=
