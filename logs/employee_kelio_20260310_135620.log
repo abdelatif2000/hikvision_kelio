@@ -1,0 +1,31 @@
+2026-03-10 13:56:20,423 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:56:20,423 - hikvision_kelio - INFO -   Employee Import — Collaborateur → Kelio
+2026-03-10 13:56:20,424 - hikvision_kelio - INFO -   Base de données: Interface_GED_KELIO
+2026-03-10 13:56:20,424 - hikvision_kelio - INFO -   Table: Collaborateur
+2026-03-10 13:56:20,424 - hikvision_kelio - INFO -   Section par défaut: ZTT
+2026-03-10 13:56:20,424 - hikvision_kelio - INFO -   Filtre Date_Embauche >=: 2026-02-13
+2026-03-10 13:56:20,425 - hikvision_kelio - INFO -   Taille de lot: 100
+2026-03-10 13:56:20,434 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:56:20,435 - hikvision_kelio - INFO - Connexion à la base employé: Interface_GED_KELIO
+2026-03-10 13:56:21,146 - hikvision_kelio - INFO - Client SOAP Employee connecté à https://demo-cbo.kelio.io/open/services/EmployeeService?wsdl
+2026-03-10 13:56:21,758 - hikvision_kelio - INFO - Client SOAP EmployeeFieldAssignment connecté à https://demo-cbo.kelio.io/open/services/EmployeeFieldAssignmentService?wsdl
+2026-03-10 13:56:21,758 - hikvision_kelio - INFO - --- Page 1 (offset=0) ---
+2026-03-10 13:56:21,762 - hikvision_kelio - INFO - Page offset=0: 2 employé(s) récupéré(s)
+2026-03-10 13:56:21,763 - hikvision_kelio - INFO - Page 1: 2 employé(s) à traiter
+2026-03-10 13:56:22,429 - hikvision_kelio - WARNING - Employé REJETÉ: MatriculePointeuse=503353 — Le salarié doit être affecté à un service(s) durant toute la période d'affectation du contrat horaire. Veuillez modifier les dates d'affectation du service(s).
+2026-03-10 13:56:22,430 - hikvision_kelio - INFO - Import employés: 1 succès, 1 rejeté(s)
+2026-03-10 13:56:22,556 - hikvision_kelio - INFO - Lot de 2 champ(s) Bp importé(s) avec succès
+2026-03-10 13:56:22,556 - hikvision_kelio - INFO - --- Page 2 (offset=100) ---
+2026-03-10 13:56:22,558 - hikvision_kelio - INFO - Page offset=100: 0 employé(s) récupéré(s)
+2026-03-10 13:56:22,559 - hikvision_kelio - INFO - Plus d'enregistrements à traiter.
+2026-03-10 13:56:22,559 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:56:22,559 - hikvision_kelio - INFO -   Résultat:
+2026-03-10 13:56:22,559 - hikvision_kelio - INFO -     Employés importés       : 1
+2026-03-10 13:56:22,560 - hikvision_kelio - INFO -     Employés rejetés        : 1
+2026-03-10 13:56:22,560 - hikvision_kelio - INFO -     Champs Bp importés      : 2
+2026-03-10 13:56:22,560 - hikvision_kelio - INFO -     Champs Bp rejetés       : 0
+2026-03-10 13:56:22,560 - hikvision_kelio - INFO -     Total traité: 2
+2026-03-10 13:56:22,561 - hikvision_kelio - WARNING -   Détails des erreurs Kelio:
+2026-03-10 13:56:22,561 - hikvision_kelio - WARNING -     MatriculePointeuse=503353 : Le salarié doit être affecté à un service(s) durant toute la période d'affectation du contrat horaire. Veuillez modifier les dates d'affectation du service(s).
+2026-03-10 13:56:22,561 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:56:22,562 - hikvision_kelio - INFO - Terminé.

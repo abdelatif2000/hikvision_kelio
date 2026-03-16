@@ -1,0 +1,4 @@
+pyodbc
+zeep
+requests
+python-dotenv

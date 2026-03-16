@@ -1,0 +1,35 @@
+2026-03-10 13:35:00,530 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:35:00,530 - hikvision_kelio - INFO -   Employee Import — Collaborateur → Kelio
+2026-03-10 13:35:00,530 - hikvision_kelio - INFO -   Base de données: Interface_GED_KELIO
+2026-03-10 13:35:00,531 - hikvision_kelio - INFO -   Table: Collaborateur
+2026-03-10 13:35:00,531 - hikvision_kelio - INFO -   Section par défaut: ZTT
+2026-03-10 13:35:00,531 - hikvision_kelio - INFO -   Filtre Date_Embauche >=: 2026-02-13
+2026-03-10 13:35:00,531 - hikvision_kelio - INFO -   Taille de lot: 100
+2026-03-10 13:35:00,533 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:35:00,533 - hikvision_kelio - INFO - Connexion à la base employé: Interface_GED_KELIO
+2026-03-10 13:35:01,237 - hikvision_kelio - INFO - Client SOAP Employee connecté à https://demo-cbo.kelio.io/open/services/EmployeeService?wsdl
+2026-03-10 13:35:01,863 - hikvision_kelio - INFO - Client SOAP EmployeeFieldAssignment connecté à https://demo-cbo.kelio.io/open/services/EmployeeFieldAssignmentService?wsdl
+2026-03-10 13:35:01,864 - hikvision_kelio - INFO - --- Page 1 (offset=0) ---
+2026-03-10 13:35:01,866 - hikvision_kelio - INFO - Page offset=0: 2 employé(s) récupéré(s)
+2026-03-10 13:35:01,867 - hikvision_kelio - INFO - Page 1: 2 employé(s) à traiter
+2026-03-10 13:35:02,460 - hikvision_kelio - WARNING - Employé REJETÉ: MatriculePointeuse=503353 — Il faut une affectation de service(s) durant toute la période d'affectation de la prise en compte salarié. Veuillez modifier les dates d'affectation du service(s).
+2026-03-10 13:35:02,460 - hikvision_kelio - WARNING - Employé REJETÉ: MatriculePointeuse=503354 — Salariés actifs en administration du personnel : le nombre maximal est atteint (200)
+2026-03-10 13:35:02,460 - hikvision_kelio - INFO - Import employés: 0 succès, 2 rejeté(s)
+2026-03-10 13:35:02,548 - hikvision_kelio - WARNING - Champ libre REJETÉ: MatriculePointeuse=503354 — Salarié introuvable
+2026-03-10 13:35:02,548 - hikvision_kelio - INFO - Import champs Bp: 1 succès, 1 rejeté(s)
+2026-03-10 13:35:02,549 - hikvision_kelio - INFO - --- Page 2 (offset=100) ---
+2026-03-10 13:35:02,552 - hikvision_kelio - INFO - Page offset=100: 0 employé(s) récupéré(s)
+2026-03-10 13:35:02,553 - hikvision_kelio - INFO - Plus d'enregistrements à traiter.
+2026-03-10 13:35:02,553 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:35:02,553 - hikvision_kelio - INFO -   Résultat:
+2026-03-10 13:35:02,554 - hikvision_kelio - INFO -     Employés importés       : 0
+2026-03-10 13:35:02,554 - hikvision_kelio - INFO -     Employés rejetés        : 2
+2026-03-10 13:35:02,555 - hikvision_kelio - INFO -     Champs Bp importés      : 1
+2026-03-10 13:35:02,555 - hikvision_kelio - INFO -     Champs Bp rejetés       : 1
+2026-03-10 13:35:02,556 - hikvision_kelio - INFO -     Total traité: 2
+2026-03-10 13:35:02,556 - hikvision_kelio - WARNING -   Détails des erreurs Kelio:
+2026-03-10 13:35:02,556 - hikvision_kelio - WARNING -     MatriculePointeuse=503353 : Il faut une affectation de service(s) durant toute la période d'affectation de la prise en compte salarié. Veuillez modifier les dates d'affectation du service(s).
+2026-03-10 13:35:02,557 - hikvision_kelio - WARNING -     MatriculePointeuse=503354 : Salariés actifs en administration du personnel : le nombre maximal est atteint (200)
+2026-03-10 13:35:02,557 - hikvision_kelio - WARNING -     MatriculePointeuse=503354 : Salarié introuvable
+2026-03-10 13:35:02,558 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:35:02,559 - hikvision_kelio - INFO - Terminé.

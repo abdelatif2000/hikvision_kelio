@@ -1,0 +1,386 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://echange.service.open.bodet.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="EmployeeFieldAssignmentService" targetNamespace="http://echange.service.open.bodet.com">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://lang.java">
+<xsd:complexType name="Throwable">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:complexType name="Exception">
+<xsd:complexContent>
+<xsd:extension base="tns:Throwable">
+<xsd:sequence/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://echange.service.open.bodet.com" xmlns:ns0="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://echange.service.open.bodet.com">
+<xsd:complexType name="ArrayOfAskedPopulationWithPeriod">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="AskedPopulationWithPeriod" nillable="true" type="tns:AskedPopulationWithPeriod"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfEmployeeFieldAssignment">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="EmployeeFieldAssignment" nillable="true" type="tns:EmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="AskedPopulation">
+<xsd:complexContent>
+<xsd:extension base="tns:EmployeeInformation">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="groupFilter" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="populationEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="populationFilter" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="populationMode" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="populationStartDate" nillable="true" type="xsd:date"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="AskedPopulationWithPeriod">
+<xsd:complexContent>
+<xsd:extension base="tns:AskedPopulation">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="dateMode" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="endDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="endOffset" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="startDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="startOffset" nillable="true" type="xsd:int"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="EmployeeFieldAssignment">
+<xsd:complexContent>
+<xsd:extension base="tns:EmployeeInformation">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeeFieldAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeFieldDataAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeFieldDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeFieldKey" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="employeeFieldValue" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="endDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="startDate" nillable="true" type="xsd:date"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="EmployeeInformation">
+<xsd:complexContent>
+<xsd:extension base="tns:Object">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="archivedEmployee" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="employeeBadgeCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeFirstName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeIdentificationCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeIdentificationNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeKey" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="employeeSurname" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType abstract="true" name="Object">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="errorMessage" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="technicalString" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="deleteEmployeeFreeFieldAssignments" type="tns:deleteEmployeeFreeFieldAssignments"/>
+<xsd:complexType name="deleteEmployeeFreeFieldAssignments">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="EmployeeFreeFieldAssignmentsToDelete" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="deleteEmployeeFreeFieldAssignmentsResponse" type="tns:deleteEmployeeFreeFieldAssignmentsResponse"/>
+<xsd:complexType name="deleteEmployeeFreeFieldAssignmentsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="deleteEmployeeFreeFieldAssignmentsInError" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="deleteEmployeePredefinedFieldAssignments" type="tns:deleteEmployeePredefinedFieldAssignments"/>
+<xsd:complexType name="deleteEmployeePredefinedFieldAssignments">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="EmployeePredefinedFieldAssignmentsToDelete" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="deleteEmployeePredefinedFieldAssignmentsResponse" type="tns:deleteEmployeePredefinedFieldAssignmentsResponse"/>
+<xsd:complexType name="deleteEmployeePredefinedFieldAssignmentsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="deleteEmployeePredefinedFieldAssignmentsInError" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeFreeFieldAssignments" type="tns:exportEmployeeFreeFieldAssignments"/>
+<xsd:complexType name="exportEmployeeFreeFieldAssignments">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="populationFilter" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="groupFilter" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeFreeFieldAssignmentsResponse" type="tns:exportEmployeeFreeFieldAssignmentsResponse"/>
+<xsd:complexType name="exportEmployeeFreeFieldAssignmentsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployeeFreeFieldAssignments" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeFreeFieldAssignmentsList" type="tns:exportEmployeeFreeFieldAssignmentsList"/>
+<xsd:complexType name="exportEmployeeFreeFieldAssignmentsList">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportFilter" type="tns:ArrayOfAskedPopulationWithPeriod"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeFreeFieldAssignmentsListResponse" type="tns:exportEmployeeFreeFieldAssignmentsListResponse"/>
+<xsd:complexType name="exportEmployeeFreeFieldAssignmentsListResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployeeFreeFieldAssignments" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeePredefinedFieldAssignments" type="tns:exportEmployeePredefinedFieldAssignments"/>
+<xsd:complexType name="exportEmployeePredefinedFieldAssignments">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="populationFilter" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="groupFilter" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeePredefinedFieldAssignmentsResponse" type="tns:exportEmployeePredefinedFieldAssignmentsResponse"/>
+<xsd:complexType name="exportEmployeePredefinedFieldAssignmentsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployeePredefinedFieldAssignments" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeePredefinedFieldAssignmentsList" type="tns:exportEmployeePredefinedFieldAssignmentsList"/>
+<xsd:complexType name="exportEmployeePredefinedFieldAssignmentsList">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportFilter" type="tns:ArrayOfAskedPopulationWithPeriod"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeePredefinedFieldAssignmentsListResponse" type="tns:exportEmployeePredefinedFieldAssignmentsListResponse"/>
+<xsd:complexType name="exportEmployeePredefinedFieldAssignmentsListResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployeePredefinedFieldAssignments" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployeeFreeFieldAssignments" type="tns:importEmployeeFreeFieldAssignments"/>
+<xsd:complexType name="importEmployeeFreeFieldAssignments">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeeFreeFieldAssignmentsToImport" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployeeFreeFieldAssignmentsResponse" type="tns:importEmployeeFreeFieldAssignmentsResponse"/>
+<xsd:complexType name="importEmployeeFreeFieldAssignmentsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeeFreeFieldAssignmentsInError" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployeePredefinedFieldAssignments" type="tns:importEmployeePredefinedFieldAssignments"/>
+<xsd:complexType name="importEmployeePredefinedFieldAssignments">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeePredefinedFieldAssignmentsToImport" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployeePredefinedFieldAssignmentsResponse" type="tns:importEmployeePredefinedFieldAssignmentsResponse"/>
+<xsd:complexType name="importEmployeePredefinedFieldAssignmentsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeePredefinedFieldAssignmentsInError" type="tns:ArrayOfEmployeeFieldAssignment"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="Exception" nillable="true" type="ns0:Exception"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="Exception">
+<wsdl:part element="tns:Exception" name="Exception"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteEmployeeFreeFieldAssignments">
+<wsdl:part element="tns:deleteEmployeeFreeFieldAssignments" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteEmployeeFreeFieldAssignmentsResponse">
+<wsdl:part element="tns:deleteEmployeeFreeFieldAssignmentsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteEmployeePredefinedFieldAssignments">
+<wsdl:part element="tns:deleteEmployeePredefinedFieldAssignments" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteEmployeePredefinedFieldAssignmentsResponse">
+<wsdl:part element="tns:deleteEmployeePredefinedFieldAssignmentsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeFreeFieldAssignments">
+<wsdl:part element="tns:exportEmployeeFreeFieldAssignments" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeFreeFieldAssignmentsResponse">
+<wsdl:part element="tns:exportEmployeeFreeFieldAssignmentsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeFreeFieldAssignmentsList">
+<wsdl:part element="tns:exportEmployeeFreeFieldAssignmentsList" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeFreeFieldAssignmentsListResponse">
+<wsdl:part element="tns:exportEmployeeFreeFieldAssignmentsListResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeePredefinedFieldAssignments">
+<wsdl:part element="tns:exportEmployeePredefinedFieldAssignments" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeePredefinedFieldAssignmentsResponse">
+<wsdl:part element="tns:exportEmployeePredefinedFieldAssignmentsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeePredefinedFieldAssignmentsList">
+<wsdl:part element="tns:exportEmployeePredefinedFieldAssignmentsList" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeePredefinedFieldAssignmentsListResponse">
+<wsdl:part element="tns:exportEmployeePredefinedFieldAssignmentsListResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployeeFreeFieldAssignments">
+<wsdl:part element="tns:importEmployeeFreeFieldAssignments" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployeeFreeFieldAssignmentsResponse">
+<wsdl:part element="tns:importEmployeeFreeFieldAssignmentsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployeePredefinedFieldAssignments">
+<wsdl:part element="tns:importEmployeePredefinedFieldAssignments" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployeePredefinedFieldAssignmentsResponse">
+<wsdl:part element="tns:importEmployeePredefinedFieldAssignmentsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:portType name="EmployeeFieldAssignmentServicePortType">
+<wsdl:operation name="deleteEmployeeFreeFieldAssignments">
+<wsdl:input message="tns:deleteEmployeeFreeFieldAssignments" name="deleteEmployeeFreeFieldAssignments"></wsdl:input>
+<wsdl:output message="tns:deleteEmployeeFreeFieldAssignmentsResponse" name="deleteEmployeeFreeFieldAssignmentsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="deleteEmployeePredefinedFieldAssignments">
+<wsdl:input message="tns:deleteEmployeePredefinedFieldAssignments" name="deleteEmployeePredefinedFieldAssignments"></wsdl:input>
+<wsdl:output message="tns:deleteEmployeePredefinedFieldAssignmentsResponse" name="deleteEmployeePredefinedFieldAssignmentsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeFreeFieldAssignments">
+<wsdl:input message="tns:exportEmployeeFreeFieldAssignments" name="exportEmployeeFreeFieldAssignments"></wsdl:input>
+<wsdl:output message="tns:exportEmployeeFreeFieldAssignmentsResponse" name="exportEmployeeFreeFieldAssignmentsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeFreeFieldAssignmentsList">
+<wsdl:input message="tns:exportEmployeeFreeFieldAssignmentsList" name="exportEmployeeFreeFieldAssignmentsList"></wsdl:input>
+<wsdl:output message="tns:exportEmployeeFreeFieldAssignmentsListResponse" name="exportEmployeeFreeFieldAssignmentsListResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeePredefinedFieldAssignments">
+<wsdl:input message="tns:exportEmployeePredefinedFieldAssignments" name="exportEmployeePredefinedFieldAssignments"></wsdl:input>
+<wsdl:output message="tns:exportEmployeePredefinedFieldAssignmentsResponse" name="exportEmployeePredefinedFieldAssignmentsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeePredefinedFieldAssignmentsList">
+<wsdl:input message="tns:exportEmployeePredefinedFieldAssignmentsList" name="exportEmployeePredefinedFieldAssignmentsList"></wsdl:input>
+<wsdl:output message="tns:exportEmployeePredefinedFieldAssignmentsListResponse" name="exportEmployeePredefinedFieldAssignmentsListResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployeeFreeFieldAssignments">
+<wsdl:input message="tns:importEmployeeFreeFieldAssignments" name="importEmployeeFreeFieldAssignments"></wsdl:input>
+<wsdl:output message="tns:importEmployeeFreeFieldAssignmentsResponse" name="importEmployeeFreeFieldAssignmentsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployeePredefinedFieldAssignments">
+<wsdl:input message="tns:importEmployeePredefinedFieldAssignments" name="importEmployeePredefinedFieldAssignments"></wsdl:input>
+<wsdl:output message="tns:importEmployeePredefinedFieldAssignmentsResponse" name="importEmployeePredefinedFieldAssignmentsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="EmployeeFieldAssignmentServiceSoapBinding" type="tns:EmployeeFieldAssignmentServicePortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="deleteEmployeeFreeFieldAssignments">
+<soap:operation soapAction="urn:deleteEmployeeFreeFieldAssignments" style="document"/>
+<wsdl:input name="deleteEmployeeFreeFieldAssignments">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="deleteEmployeeFreeFieldAssignmentsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="deleteEmployeePredefinedFieldAssignments">
+<soap:operation soapAction="urn:deleteEmployeePredefinedFieldAssignments" style="document"/>
+<wsdl:input name="deleteEmployeePredefinedFieldAssignments">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="deleteEmployeePredefinedFieldAssignmentsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeFreeFieldAssignments">
+<soap:operation soapAction="urn:exportEmployeeFreeFieldAssignments" style="document"/>
+<wsdl:input name="exportEmployeeFreeFieldAssignments">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeeFreeFieldAssignmentsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeFreeFieldAssignmentsList">
+<soap:operation soapAction="urn:exportEmployeeFreeFieldAssignmentsList" style="document"/>
+<wsdl:input name="exportEmployeeFreeFieldAssignmentsList">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeeFreeFieldAssignmentsListResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeePredefinedFieldAssignments">
+<soap:operation soapAction="urn:exportEmployeePredefinedFieldAssignments" style="document"/>
+<wsdl:input name="exportEmployeePredefinedFieldAssignments">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeePredefinedFieldAssignmentsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeePredefinedFieldAssignmentsList">
+<soap:operation soapAction="urn:exportEmployeePredefinedFieldAssignmentsList" style="document"/>
+<wsdl:input name="exportEmployeePredefinedFieldAssignmentsList">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeePredefinedFieldAssignmentsListResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployeeFreeFieldAssignments">
+<soap:operation soapAction="urn:importEmployeeFreeFieldAssignments" style="document"/>
+<wsdl:input name="importEmployeeFreeFieldAssignments">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="importEmployeeFreeFieldAssignmentsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployeePredefinedFieldAssignments">
+<soap:operation soapAction="urn:importEmployeePredefinedFieldAssignments" style="document"/>
+<wsdl:input name="importEmployeePredefinedFieldAssignments">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="importEmployeePredefinedFieldAssignmentsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="EmployeeFieldAssignmentService">
+<wsdl:port binding="tns:EmployeeFieldAssignmentServiceSoapBinding" name="EmployeeFieldAssignmentServiceHttpPort">
+<soap:address location="https://demo-cbo.kelio.io/open/services/EmployeeFieldAssignmentService"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

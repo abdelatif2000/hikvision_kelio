@@ -1,0 +1,28 @@
+2026-03-16 11:31:58,324 - hikvision_kelio - INFO - ============================================================
+2026-03-16 11:31:58,324 - hikvision_kelio - INFO -   Employee Import — Collaborateur → Kelio
+2026-03-16 11:31:58,324 - hikvision_kelio - INFO -   Base de données: Interface_GED_KELIO
+2026-03-16 11:31:58,324 - hikvision_kelio - INFO -   Table: Collaborateur
+2026-03-16 11:31:58,325 - hikvision_kelio - INFO -   Section par défaut: ZTT
+2026-03-16 11:31:58,325 - hikvision_kelio - INFO -   Filtre Date_Embauche >=: 2026-02-13
+2026-03-16 11:31:58,325 - hikvision_kelio - INFO -   Taille de lot: 100
+2026-03-16 11:31:58,327 - hikvision_kelio - INFO - ============================================================
+2026-03-16 11:31:58,327 - hikvision_kelio - INFO - Connexion à la base employé: Interface_GED_KELIO
+2026-03-16 11:31:59,057 - hikvision_kelio - INFO - Client SOAP Employee connecté à https://demo-cbo.kelio.io/open/services/EmployeeService?wsdl
+2026-03-16 11:31:59,664 - hikvision_kelio - INFO - Client SOAP EmployeeFieldAssignment connecté à https://demo-cbo.kelio.io/open/services/EmployeeFieldAssignmentService?wsdl
+2026-03-16 11:31:59,665 - hikvision_kelio - INFO - --- Page 1 (offset=0) ---
+2026-03-16 11:31:59,674 - hikvision_kelio - INFO - Page offset=0: 2 employé(s) récupéré(s)
+2026-03-16 11:31:59,675 - hikvision_kelio - INFO - Page 1: 2 employé(s) à traiter
+2026-03-16 11:32:00,689 - hikvision_kelio - INFO - Lot de 2 employé(s) importé(s) avec succès
+2026-03-16 11:32:00,823 - hikvision_kelio - INFO - Lot de 2 champ(s) Bp importé(s) avec succès
+2026-03-16 11:32:00,824 - hikvision_kelio - INFO - --- Page 2 (offset=100) ---
+2026-03-16 11:32:00,827 - hikvision_kelio - INFO - Page offset=100: 0 employé(s) récupéré(s)
+2026-03-16 11:32:00,827 - hikvision_kelio - INFO - Plus d'enregistrements à traiter.
+2026-03-16 11:32:00,827 - hikvision_kelio - INFO - ============================================================
+2026-03-16 11:32:00,828 - hikvision_kelio - INFO -   Résultat:
+2026-03-16 11:32:00,828 - hikvision_kelio - INFO -     Employés importés       : 2
+2026-03-16 11:32:00,828 - hikvision_kelio - INFO -     Employés rejetés        : 0
+2026-03-16 11:32:00,829 - hikvision_kelio - INFO -     Champs Bp importés      : 2
+2026-03-16 11:32:00,829 - hikvision_kelio - INFO -     Champs Bp rejetés       : 0
+2026-03-16 11:32:00,829 - hikvision_kelio - INFO -     Total traité: 2
+2026-03-16 11:32:00,830 - hikvision_kelio - INFO - ============================================================
+2026-03-16 11:32:00,831 - hikvision_kelio - INFO - Terminé.

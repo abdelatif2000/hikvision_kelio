@@ -1,0 +1,556 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://echange.service.open.bodet.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="EmployeeService" targetNamespace="http://echange.service.open.bodet.com">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://lang.java">
+<xsd:complexType name="Throwable">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:complexType name="Exception">
+<xsd:complexContent>
+<xsd:extension base="tns:Throwable">
+<xsd:sequence/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://echange.service.open.bodet.com" xmlns:ns0="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://echange.service.open.bodet.com">
+<xsd:complexType name="ArrayOfAskedPopulation">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="AskedPopulation" nillable="true" type="tns:AskedPopulation"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfAskedPopulationForModule">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="AskedPopulationForModule" nillable="true" type="tns:AskedPopulationForModule"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfEmployee">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="Employee" nillable="true" type="tns:Employee"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfEmployeeInformation">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="EmployeeInformation" nillable="true" type="tns:EmployeeInformation"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="AskedPopulation">
+<xsd:complexContent>
+<xsd:extension base="tns:EmployeeInformation">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="groupFilter" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="populationEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="populationFilter" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="populationMode" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="populationStartDate" nillable="true" type="xsd:date"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="AskedPopulationForModule">
+<xsd:complexContent>
+<xsd:extension base="tns:AskedPopulation">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="includeAccessModuleEmployees" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="includeTandAModuleEmployees" nillable="true" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="Employee">
+<xsd:complexContent>
+<xsd:extension base="tns:Object">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="DefaultRespectedRest" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="absenceValidator" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="absenceValidatorBadgeCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="absenceValidatorIdentificationCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="absenceValidatorIdentificationNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="absenceValidatorKey" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="accessAuthorizationEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="accessAuthorizationEndTime" nillable="true" type="xsd:time"/>
+<xsd:element minOccurs="0" name="accessAuthorizationStartDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="accessAuthorizationStartTime" nillable="true" type="xsd:time"/>
+<xsd:element minOccurs="0" name="address" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="adressAddition1" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="adressAddition2" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="adressCountryDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="arrivalInCompanyDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="attachedDocument" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="attendanceIndicationMode" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="authenticate" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="authorisedFunctionAssignmentStartDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="automaticAbsenceAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="automaticClockingAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="automaticClockingOutAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="automaticGenerationWorkingTime" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="automaticPresenceNotification" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="badge1Code" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="badge2Code" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="birthDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="birthDistrictCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="centralAlarmSystemManualActivationAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="clockingValidator" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="clockingValidatorBadgeCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="clockingValidatorIdentificationCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="clockingValidatorIdentificationNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="clockingValidatorKey" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="clockingWithoutBadgeAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="closeExceptionalAssignments" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="closePreviousSectionAssignments" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="closePreviousTakenIntoAccountPeriod" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="comment" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="compensatoryLeaveAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="concernedByAntiPassbacks" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="currentAccessProfileAssigningDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentAccessProfileAssigningEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentAccessProfileDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentCalculationConfigurationApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentCalculationConfigurationDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentClassOfCheckApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentClassOfCheckDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentClassOfCheckEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentCoefficientApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentCoefficientDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentContractCharacteristicCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentContractCharacteristicDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentDepartmentDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentEndOfPeriodCalendarApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentEndOfPeriodCalendarDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentFirmDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentHourlyContractAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentHourlyContractDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentJobApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentJobDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentLevel4Description" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentLevel5Description" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentLevel6Description" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentLevel7Description" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentLevel8Description" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentPersonalizedResetEndAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentPersonalizedResetEndDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentPersonalizedResetStartAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentPersonalizedResetStartDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentPublicHolidayCalendarApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentPublicHolidayCalendarDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentRemoteWorkingAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentRemoteWorkingApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentRemoteWorkingDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentRemoteWorkingEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentScheduleAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentScheduleApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentScheduleDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentSectionAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentSectionAssigningDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentSectionDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentSectionFullDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentSectionKey" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="currentShiftSchedulerDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentSubDepartmentDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentTimeContractApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="currentTimeContractCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentTimeContractDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentTimeContractNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="currentTimeContractType" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="currentTimeContractValue" nillable="true" type="xsd:double"/>
+<xsd:element minOccurs="0" name="currentWorkingDurationApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="dailyRestTimeDeclaration" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="defaultActivityEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="defaultCostCentreAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultCostCentreCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultCostCentreDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultCustomerAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultCustomerCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultCustomerDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultEmployeeBadge" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultEmployeeFirstName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultEmployeeIdentificationCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultEmployeeIdentificationNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultEmployeeSurname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultJobAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultJobApplicationDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="defaultJobAutomaticGeneration" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="defaultJobCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultJobDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="defaultWorkingTime" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="departureNotification" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="displayedNumberOfHours" nillable="true" type="xsd:double"/>
+<xsd:element minOccurs="0" name="durationVisualization" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="emergencyContact" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeIdentificationCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeKey" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="excludedMfa" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="extendedTimeout" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="firstName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="flexileaveAbsenceAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="givesUpSplitting" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="hourlyContractEndResetResult" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="identificationNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="isAccessModuleEmployee" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="isHRWorkspaceEmployee" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="isJobCostingModuleEmployee" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="isManagedInActivity" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="isTandAModuleEmployee" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="language" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="login" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="mobileProfileDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="nationalInsuranceNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="natureContractStartDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="notGenerateAutomaticClockingsRemoteWorking" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="password" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="passwordNeverChange" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="personalCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="personalWorkspaceProfileDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="photo" nillable="true" type="xsd:base64Binary"/>
+<xsd:element minOccurs="0" name="postcode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="presenceManagement" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="presenceManagementDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="privateEmail" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="privatePhoneNumber1" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="privatePhoneNumber2" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="privatePhoneNumber3" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="professionalEmail" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="professionalPhoneNumber1" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="professionalPhoneNumber2" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="professionalPhoneNumber3" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="professionalPhoneNumber4" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="professionalPhoneNumberAbbreviation1" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="professionalPhoneNumberAbbreviation2" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="professionalPhoneNumberAbbreviation3" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="professionalPhoneNumberAbbreviation4" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="profileDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="publicHolServiceCalendar" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="publicHolidayPaymentType" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="readerGroupDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="readerGroupStartDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="receiveVisitor" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="recipientsEmail" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="region" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="remoteWorkingAutomaticClocking" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="remoteWorkingAutomaticPresenceNotification" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="remoteWorkingValidator" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="remoteWorkingValidatorBadgeCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="remoteWorkingValidatorIdentificationCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="remoteWorkingValidatorIdentificationNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="remoteWorkingValidatorKey" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="searchUsingBadge" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="searchUsingFirstname" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="searchUsingIdentificationNumber" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="searchUsingSurname" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="sendersEmail" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="seniorityStartDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="sex" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="specificSchedulesAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="specificSchedulesEverywhereAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="superPass" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="superPassEverywhere" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="surname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="takenIntoAccountEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="takenIntoAccountPeriodEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="takenIntoAccountPeriodResetResult" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="takenIntoAccountPeriodStartDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="takenIntoAccountStartDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="timeSavingEndDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="toBeScheduled" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="town" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="useDefaultModelEmployee" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="userPortalProfileDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userProfileAssignmentWizardDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userProfileAssignmentWizardKey" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="visitorOfOtherSiteAllowance" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="visitorSectionDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="visitorUsedBadge" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="workDurationStartDate" nillable="true" type="xsd:date"/>
+<xsd:element minOccurs="0" name="workingSite" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType name="EmployeeInformation">
+<xsd:complexContent>
+<xsd:extension base="tns:Object">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="archivedEmployee" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="employeeBadgeCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeFirstName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeIdentificationCode" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeIdentificationNumber" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeKey" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="employeeSurname" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType abstract="true" name="Object">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="errorMessage" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="technicalString" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="deleteEmployees" type="tns:deleteEmployees"/>
+<xsd:complexType name="deleteEmployees">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeesToDelete" type="tns:ArrayOfEmployee"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="deleteEmployeesResponse" type="tns:deleteEmployeesResponse"/>
+<xsd:complexType name="deleteEmployeesResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeesInError" type="tns:ArrayOfEmployee"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeInformations" type="tns:exportEmployeeInformations"/>
+<xsd:complexType name="exportEmployeeInformations">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="populationFilter" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="groupFilter" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeInformationsResponse" type="tns:exportEmployeeInformationsResponse"/>
+<xsd:complexType name="exportEmployeeInformationsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployeeInformations" type="tns:ArrayOfEmployeeInformation"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeInformationsForModule" type="tns:exportEmployeeInformationsForModule"/>
+<xsd:complexType name="exportEmployeeInformationsForModule">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="populationFilter" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="groupFilter" nillable="true" type="xsd:string"/>
+<xsd:element name="includeTandAModuleEmployees" type="xsd:boolean"/>
+<xsd:element name="includeAccessModuleEmployees" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeInformationsForModuleResponse" type="tns:exportEmployeeInformationsForModuleResponse"/>
+<xsd:complexType name="exportEmployeeInformationsForModuleResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployeeInformations" type="tns:ArrayOfEmployeeInformation"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeInformationsList" type="tns:exportEmployeeInformationsList"/>
+<xsd:complexType name="exportEmployeeInformationsList">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="populationFilter" type="tns:ArrayOfAskedPopulationForModule"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeInformationsListResponse" type="tns:exportEmployeeInformationsListResponse"/>
+<xsd:complexType name="exportEmployeeInformationsListResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployeeInformations" type="tns:ArrayOfEmployeeInformation"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployees" type="tns:exportEmployees"/>
+<xsd:complexType name="exportEmployees">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="populationFilter" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="groupFilter" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeesResponse" type="tns:exportEmployeesResponse"/>
+<xsd:complexType name="exportEmployeesResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployees" type="tns:ArrayOfEmployee"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeesList" type="tns:exportEmployeesList"/>
+<xsd:complexType name="exportEmployeesList">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="populationFilter" type="tns:ArrayOfAskedPopulation"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeesListResponse" type="tns:exportEmployeesListResponse"/>
+<xsd:complexType name="exportEmployeesListResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployees" type="tns:ArrayOfEmployee"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployees" type="tns:importEmployees"/>
+<xsd:complexType name="importEmployees">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeesToImport" type="tns:ArrayOfEmployee"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployeesResponse" type="tns:importEmployeesResponse"/>
+<xsd:complexType name="importEmployeesResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeesInError" type="tns:ArrayOfEmployee"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="Exception" nillable="true" type="ns0:Exception"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="Exception">
+<wsdl:part element="tns:Exception" name="Exception"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteEmployees">
+<wsdl:part element="tns:deleteEmployees" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="deleteEmployeesResponse">
+<wsdl:part element="tns:deleteEmployeesResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeInformations">
+<wsdl:part element="tns:exportEmployeeInformations" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeInformationsResponse">
+<wsdl:part element="tns:exportEmployeeInformationsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeInformationsForModule">
+<wsdl:part element="tns:exportEmployeeInformationsForModule" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeInformationsForModuleResponse">
+<wsdl:part element="tns:exportEmployeeInformationsForModuleResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeInformationsList">
+<wsdl:part element="tns:exportEmployeeInformationsList" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeInformationsListResponse">
+<wsdl:part element="tns:exportEmployeeInformationsListResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployees">
+<wsdl:part element="tns:exportEmployees" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeesResponse">
+<wsdl:part element="tns:exportEmployeesResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeesList">
+<wsdl:part element="tns:exportEmployeesList" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeesListResponse">
+<wsdl:part element="tns:exportEmployeesListResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployees">
+<wsdl:part element="tns:importEmployees" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployeesResponse">
+<wsdl:part element="tns:importEmployeesResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:portType name="EmployeeServicePortType">
+<wsdl:operation name="deleteEmployees">
+<wsdl:input message="tns:deleteEmployees" name="deleteEmployees"></wsdl:input>
+<wsdl:output message="tns:deleteEmployeesResponse" name="deleteEmployeesResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeInformations">
+<wsdl:input message="tns:exportEmployeeInformations" name="exportEmployeeInformations"></wsdl:input>
+<wsdl:output message="tns:exportEmployeeInformationsResponse" name="exportEmployeeInformationsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeInformationsForModule">
+<wsdl:input message="tns:exportEmployeeInformationsForModule" name="exportEmployeeInformationsForModule"></wsdl:input>
+<wsdl:output message="tns:exportEmployeeInformationsForModuleResponse" name="exportEmployeeInformationsForModuleResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeInformationsList">
+<wsdl:input message="tns:exportEmployeeInformationsList" name="exportEmployeeInformationsList"></wsdl:input>
+<wsdl:output message="tns:exportEmployeeInformationsListResponse" name="exportEmployeeInformationsListResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployees">
+<wsdl:input message="tns:exportEmployees" name="exportEmployees"></wsdl:input>
+<wsdl:output message="tns:exportEmployeesResponse" name="exportEmployeesResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeesList">
+<wsdl:input message="tns:exportEmployeesList" name="exportEmployeesList"></wsdl:input>
+<wsdl:output message="tns:exportEmployeesListResponse" name="exportEmployeesListResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployees">
+<wsdl:input message="tns:importEmployees" name="importEmployees"></wsdl:input>
+<wsdl:output message="tns:importEmployeesResponse" name="importEmployeesResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="EmployeeServiceSoapBinding" type="tns:EmployeeServicePortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="deleteEmployees">
+<soap:operation soapAction="urn:deleteEmployees" style="document"/>
+<wsdl:input name="deleteEmployees">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="deleteEmployeesResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeInformations">
+<soap:operation soapAction="urn:exportEmployeeInformations" style="document"/>
+<wsdl:input name="exportEmployeeInformations">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeeInformationsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeInformationsForModule">
+<soap:operation soapAction="urn:exportEmployeeInformationsForModule" style="document"/>
+<wsdl:input name="exportEmployeeInformationsForModule">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeeInformationsForModuleResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeeInformationsList">
+<soap:operation soapAction="urn:exportEmployeeInformationsList" style="document"/>
+<wsdl:input name="exportEmployeeInformationsList">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeeInformationsListResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployees">
+<soap:operation soapAction="urn:exportEmployees" style="document"/>
+<wsdl:input name="exportEmployees">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeesResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeesList">
+<soap:operation soapAction="urn:exportEmployeesList" style="document"/>
+<wsdl:input name="exportEmployeesList">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeesListResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployees">
+<soap:operation soapAction="urn:importEmployees" style="document"/>
+<wsdl:input name="importEmployees">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="importEmployeesResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="EmployeeService">
+<wsdl:port binding="tns:EmployeeServiceSoapBinding" name="EmployeeServiceHttpPort">
+<soap:address location="https://demo-cbo.kelio.io/open/services/EmployeeService"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

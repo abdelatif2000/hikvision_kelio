@@ -1,0 +1,37 @@
+2026-03-10 11:46:29,798 - hikvision_kelio - INFO - ============================================================
+2026-03-10 11:46:29,798 - hikvision_kelio - INFO -   Employee Import — Collaborateur → Kelio
+2026-03-10 11:46:29,798 - hikvision_kelio - INFO -   Base de données: Interface_GED_KELIO
+2026-03-10 11:46:29,799 - hikvision_kelio - INFO -   Table: Collaborateur
+2026-03-10 11:46:29,799 - hikvision_kelio - INFO -   Section par défaut: ZTT
+2026-03-10 11:46:29,799 - hikvision_kelio - INFO -   Filtre Date_Embauche >=: 2026-02-13
+2026-03-10 11:46:29,800 - hikvision_kelio - INFO -   Taille de lot: 100
+2026-03-10 11:46:29,801 - hikvision_kelio - INFO - ============================================================
+2026-03-10 11:46:29,801 - hikvision_kelio - INFO - Connexion à la base employé: Interface_GED_KELIO
+2026-03-10 11:46:30,669 - hikvision_kelio - INFO - Client SOAP Employee connecté à https://demo-cbo.kelio.io/open/services/EmployeeService?wsdl
+2026-03-10 11:46:31,323 - hikvision_kelio - INFO - Client SOAP EmployeeField connecté à https://demo-cbo.kelio.io/open/services/EmployeeFieldService?wsdl
+2026-03-10 11:46:31,323 - hikvision_kelio - INFO - --- Page 1 (offset=0) ---
+2026-03-10 11:46:31,328 - hikvision_kelio - INFO - Page offset=0: 2 employé(s) récupéré(s)
+2026-03-10 11:46:31,329 - hikvision_kelio - INFO - Page 1: 2 employé(s) à traiter
+2026-03-10 11:46:31,949 - hikvision_kelio - WARNING - Employé REJETÉ: MatriculePaie=503353 — La caractéristique du contrat est introuvable
+2026-03-10 11:46:31,950 - hikvision_kelio - WARNING - Employé REJETÉ: MatriculePaie=503354 — La caractéristique du contrat est introuvable
+2026-03-10 11:46:31,950 - hikvision_kelio - INFO - Import employés: 0 succès, 2 rejeté(s)
+2026-03-10 11:46:32,027 - hikvision_kelio - WARNING - Champ libre REJETÉ: Bp=503353 — Le libellé est invalide
+2026-03-10 11:46:32,027 - hikvision_kelio - WARNING - Champ libre REJETÉ: Bp=503354 — Le libellé est invalide
+2026-03-10 11:46:32,027 - hikvision_kelio - INFO - Import champs libres Bp: 0 succès, 2 rejeté(s)
+2026-03-10 11:46:32,028 - hikvision_kelio - INFO - --- Page 2 (offset=100) ---
+2026-03-10 11:46:32,030 - hikvision_kelio - INFO - Page offset=100: 0 employé(s) récupéré(s)
+2026-03-10 11:46:32,030 - hikvision_kelio - INFO - Plus d'enregistrements à traiter.
+2026-03-10 11:46:32,030 - hikvision_kelio - INFO - ============================================================
+2026-03-10 11:46:32,031 - hikvision_kelio - INFO -   Résultat:
+2026-03-10 11:46:32,031 - hikvision_kelio - INFO -     Employés importés       : 0
+2026-03-10 11:46:32,031 - hikvision_kelio - INFO -     Employés rejetés        : 2
+2026-03-10 11:46:32,031 - hikvision_kelio - INFO -     Champs Bp importés      : 0
+2026-03-10 11:46:32,031 - hikvision_kelio - INFO -     Champs Bp rejetés       : 2
+2026-03-10 11:46:32,032 - hikvision_kelio - INFO -     Total traité: 2
+2026-03-10 11:46:32,032 - hikvision_kelio - WARNING -   Détails des erreurs Kelio:
+2026-03-10 11:46:32,032 - hikvision_kelio - WARNING -     MatriculePaie=503353 : La caractéristique du contrat est introuvable
+2026-03-10 11:46:32,032 - hikvision_kelio - WARNING -     MatriculePaie=503354 : La caractéristique du contrat est introuvable
+2026-03-10 11:46:32,033 - hikvision_kelio - WARNING -     MatriculePaie=503353 : Le libellé est invalide
+2026-03-10 11:46:32,033 - hikvision_kelio - WARNING -     MatriculePaie=503354 : Le libellé est invalide
+2026-03-10 11:46:32,033 - hikvision_kelio - INFO - ============================================================
+2026-03-10 11:46:32,035 - hikvision_kelio - INFO - Terminé.

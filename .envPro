@@ -1,0 +1,65 @@
+# =============================================================
+#   Configuration
+# =============================================================
+# --- SQL Server Database ---
+DB_HOST=192.168.2.130
+DB_USER=sa
+DB_PASSWORD=dmin@7878
+DB_NAME=HikVision
+DB_TABLE=attLog
+DB_DRIVER=SQL Server
+
+# --- Kelio SOAP Web Service ---
+KELIO_SOAP_URL=http://localhost:8089/open/services/ClockingService?wsdl
+KELIO_SOAP_LOGIN=cbo
+KELIO_SOAP_PASSWORD=Admin@7878
+
+# --- Processing ---
+BATCH_SIZE=1000
+LOG_LEVEL=INFO
+
+# --- Absence DB (GEDRHP table) ---
+ABSENCE_DB_HOST=APPXETL01\MSETLSP
+ABSENCE_DB_USER=KELIO_USER
+ABSENCE_DB_PASSWORD=SPKelio@26
+ABSENCE_DB_NAME=Interface_GED_KELIO
+ABSENCE_DB_DRIVER=SQL Server
+ABSENCE_DB_TABLE=GEDRHP
+ABSENCE_MONTHS_BACK=3
+# Comma-separated Code_Entite values to filter (empty = all entities)
+ABSENCE_CODE_ENTITE=3
+
+# --- Kelio Absence SOAP Web Service ---
+KELIO_ABSENCE_SOAP_URL=http://localhost:8089/open/services/AbsenceFileService?wsdl
+
+# --- Employee Sync DB (local DB with write access) ---
+EMPLOYEE_SYNC_DB_HOST=localhost
+EMPLOYEE_SYNC_DB_USER=sa
+EMPLOYEE_SYNC_DB_PASSWORD=dmin@7878
+EMPLOYEE_SYNC_DB_NAME=Sync_interface_GED_KELIO
+EMPLOYEE_SYNC_DB_DRIVER=SQL Server
+EMPLOYEE_SYNC_TABLE=EmployeeSync
+
+# --- Employee Source (Collaborateur via Linked Server) ---
+EMPLOYEE_SOURCE_LINKED_SERVER=SOURCE_SERVER_GEDRHP
+EMPLOYEE_SOURCE_DB=Interface_GED_KELIO
+EMPLOYEE_SOURCE_TABLE=Collaborateur
+EMPLOYEE_DEFAULT_SECTION=ZTT
+# Optional: filter employees by Date_Embauche >= this value. Leave empty to fetch all.
+EMPLOYEE_DATE_EMBAUCHE_FROM=
+# Comma-separated Entite_Juridique values to filter with LIKE %value% (empty = all)
+EMPLOYEE_ENTITE_JURIDIQUE=
+
+# --- Kelio Employee SOAP Web Services ---
+KELIO_EMPLOYEE_SOAP_URL=http://localhost:8089/open/services/EmployeeService?wsdl
+KELIO_EMPLOYEE_FIELD_SOAP_URL=http://localhost:8089/open/services/EmployeeFieldAssignmentService?wsdl
+
+# --- SMTP Email Alerts ---
+SMTP_HOST=192.168.1.56
+SMTP_PORT=25
+SMTP_FROM=kelio@synergiesprogres.ma
+SMTP_TO=abdelatif.benichou@cbo.ma
+# Optional: leave empty for no authentication (internal relay)
+SMTP_USER=
+SMTP_PASSWORD=
+SMTP_ENABLED=true

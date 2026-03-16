@@ -1,0 +1,207 @@
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://echange.service.open.bodet.com" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="EmployeeFieldService" targetNamespace="http://echange.service.open.bodet.com">
+<wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://lang.java">
+<xsd:complexType name="Throwable">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:complexType name="Exception">
+<xsd:complexContent>
+<xsd:extension base="tns:Throwable">
+<xsd:sequence/>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://echange.service.open.bodet.com" xmlns:ns0="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://echange.service.open.bodet.com">
+<xsd:complexType name="ArrayOfEmployeeField">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="EmployeeField" nillable="true" type="tns:EmployeeField"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="EmployeeField">
+<xsd:complexContent>
+<xsd:extension base="tns:Object">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="administrationEmployeeFileTab" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="employeeFieldAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeFieldComment" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeFieldDataAbbreviation" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeFieldDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="employeeFieldKey" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="employeeFieldValue" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="fieldFormat" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="fieldValueKey" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="humanResourceThemeCode" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="humanResourceThemeDescription" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="interwinPosition" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="isAccessField" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="isHistorical" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="isHumanResourceField" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="isJobCostingField" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="isTandAField" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="isVisitorField" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="searchUsingEmployeeFieldAbbreviation" nillable="true" type="xsd:boolean"/>
+<xsd:element minOccurs="0" name="searchUsingEmployeeFieldValue" nillable="true" type="xsd:boolean"/>
+</xsd:sequence>
+</xsd:extension>
+</xsd:complexContent>
+</xsd:complexType>
+<xsd:complexType abstract="true" name="Object">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="errorMessage" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="technicalString" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeeFreeFields" type="tns:exportEmployeeFreeFields"/>
+<xsd:complexType name="exportEmployeeFreeFields">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:element name="exportEmployeeFreeFieldsResponse" type="tns:exportEmployeeFreeFieldsResponse"/>
+<xsd:complexType name="exportEmployeeFreeFieldsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployeeFreeFields" type="tns:ArrayOfEmployeeField"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="exportEmployeePredefinedFields" type="tns:exportEmployeePredefinedFields"/>
+<xsd:complexType name="exportEmployeePredefinedFields">
+<xsd:sequence/>
+</xsd:complexType>
+<xsd:element name="exportEmployeePredefinedFieldsResponse" type="tns:exportEmployeePredefinedFieldsResponse"/>
+<xsd:complexType name="exportEmployeePredefinedFieldsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="exportedEmployeePredefinedFields" type="tns:ArrayOfEmployeeField"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployeeFreeFields" type="tns:importEmployeeFreeFields"/>
+<xsd:complexType name="importEmployeeFreeFields">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeeFreeFieldsToImport" type="tns:ArrayOfEmployeeField"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployeeFreeFieldsResponse" type="tns:importEmployeeFreeFieldsResponse"/>
+<xsd:complexType name="importEmployeeFreeFieldsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeeFreeFieldsInError" type="tns:ArrayOfEmployeeField"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployeePredefinedFields" type="tns:importEmployeePredefinedFields"/>
+<xsd:complexType name="importEmployeePredefinedFields">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeePredefinedFieldsToImport" type="tns:ArrayOfEmployeeField"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="importEmployeePredefinedFieldsResponse" type="tns:importEmployeePredefinedFieldsResponse"/>
+<xsd:complexType name="importEmployeePredefinedFieldsResponse">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="employeePredefinedFieldsInError" type="tns:ArrayOfEmployeeField"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="Exception" nillable="true" type="ns0:Exception"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="Exception">
+<wsdl:part element="tns:Exception" name="Exception"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeFreeFields">
+<wsdl:part element="tns:exportEmployeeFreeFields" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeeFreeFieldsResponse">
+<wsdl:part element="tns:exportEmployeeFreeFieldsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeePredefinedFields">
+<wsdl:part element="tns:exportEmployeePredefinedFields" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="exportEmployeePredefinedFieldsResponse">
+<wsdl:part element="tns:exportEmployeePredefinedFieldsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployeeFreeFields">
+<wsdl:part element="tns:importEmployeeFreeFields" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployeeFreeFieldsResponse">
+<wsdl:part element="tns:importEmployeeFreeFieldsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployeePredefinedFields">
+<wsdl:part element="tns:importEmployeePredefinedFields" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:message name="importEmployeePredefinedFieldsResponse">
+<wsdl:part element="tns:importEmployeePredefinedFieldsResponse" name="parameters"></wsdl:part>
+</wsdl:message>
+<wsdl:portType name="EmployeeFieldServicePortType">
+<wsdl:operation name="exportEmployeeFreeFields">
+<wsdl:input message="tns:exportEmployeeFreeFields" name="exportEmployeeFreeFields"></wsdl:input>
+<wsdl:output message="tns:exportEmployeeFreeFieldsResponse" name="exportEmployeeFreeFieldsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeePredefinedFields">
+<wsdl:input message="tns:exportEmployeePredefinedFields" name="exportEmployeePredefinedFields"></wsdl:input>
+<wsdl:output message="tns:exportEmployeePredefinedFieldsResponse" name="exportEmployeePredefinedFieldsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployeeFreeFields">
+<wsdl:input message="tns:importEmployeeFreeFields" name="importEmployeeFreeFields"></wsdl:input>
+<wsdl:output message="tns:importEmployeeFreeFieldsResponse" name="importEmployeeFreeFieldsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployeePredefinedFields">
+<wsdl:input message="tns:importEmployeePredefinedFields" name="importEmployeePredefinedFields"></wsdl:input>
+<wsdl:output message="tns:importEmployeePredefinedFieldsResponse" name="importEmployeePredefinedFieldsResponse"></wsdl:output>
+<wsdl:fault message="tns:Exception" name="Exception"></wsdl:fault>
+</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="EmployeeFieldServiceSoapBinding" type="tns:EmployeeFieldServicePortType">
+<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<wsdl:operation name="exportEmployeeFreeFields">
+<soap:operation soapAction="urn:exportEmployeeFreeFields" style="document"/>
+<wsdl:input name="exportEmployeeFreeFields">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeeFreeFieldsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="exportEmployeePredefinedFields">
+<soap:operation soapAction="urn:exportEmployeePredefinedFields" style="document"/>
+<wsdl:input name="exportEmployeePredefinedFields">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="exportEmployeePredefinedFieldsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployeeFreeFields">
+<soap:operation soapAction="urn:importEmployeeFreeFields" style="document"/>
+<wsdl:input name="importEmployeeFreeFields">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="importEmployeeFreeFieldsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+<wsdl:operation name="importEmployeePredefinedFields">
+<soap:operation soapAction="urn:importEmployeePredefinedFields" style="document"/>
+<wsdl:input name="importEmployeePredefinedFields">
+<soap:body use="literal"/>
+</wsdl:input>
+<wsdl:output name="importEmployeePredefinedFieldsResponse">
+<soap:body use="literal"/>
+</wsdl:output>
+<wsdl:fault name="Exception">
+<soap:fault name="Exception" use="literal"/>
+</wsdl:fault>
+</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="EmployeeFieldService">
+<wsdl:port binding="tns:EmployeeFieldServiceSoapBinding" name="EmployeeFieldServiceHttpPort">
+<soap:address location="https://demo-cbo.kelio.io/open/services/EmployeeFieldService"/>
+</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

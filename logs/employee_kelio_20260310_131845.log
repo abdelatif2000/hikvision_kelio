@@ -1,0 +1,35 @@
+2026-03-10 13:18:45,246 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:18:45,247 - hikvision_kelio - INFO -   Employee Import — Collaborateur → Kelio
+2026-03-10 13:18:45,247 - hikvision_kelio - INFO -   Base de données: Interface_GED_KELIO
+2026-03-10 13:18:45,247 - hikvision_kelio - INFO -   Table: Collaborateur
+2026-03-10 13:18:45,247 - hikvision_kelio - INFO -   Section par défaut: ZTT
+2026-03-10 13:18:45,248 - hikvision_kelio - INFO -   Filtre Date_Embauche >=: 2026-02-13
+2026-03-10 13:18:45,248 - hikvision_kelio - INFO -   Taille de lot: 100
+2026-03-10 13:18:45,248 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:18:45,249 - hikvision_kelio - INFO - Connexion à la base employé: Interface_GED_KELIO
+2026-03-10 13:18:45,973 - hikvision_kelio - INFO - Client SOAP Employee connecté à https://demo-cbo.kelio.io/open/services/EmployeeService?wsdl
+2026-03-10 13:18:46,585 - hikvision_kelio - INFO - Client SOAP EmployeeFieldAssignment connecté à https://demo-cbo.kelio.io/open/services/EmployeeFieldAssignmentService?wsdl
+2026-03-10 13:18:46,585 - hikvision_kelio - INFO - --- Page 1 (offset=0) ---
+2026-03-10 13:18:46,587 - hikvision_kelio - INFO - Page offset=0: 2 employé(s) récupéré(s)
+2026-03-10 13:18:46,588 - hikvision_kelio - INFO - Page 1: 2 employé(s) à traiter
+2026-03-10 13:18:47,047 - hikvision_kelio - WARNING - Employé REJETÉ: MatriculePointeuse=503354 — Salariés actifs en administration du personnel : le nombre maximal est atteint (200)
+2026-03-10 13:18:47,048 - hikvision_kelio - INFO - Import employés: 1 succès, 1 rejeté(s)
+2026-03-10 13:18:47,132 - hikvision_kelio - WARNING - Champ libre REJETÉ: MatriculePointeuse=503353 — Champ libre ou prédéfini invalide
+2026-03-10 13:18:47,132 - hikvision_kelio - WARNING - Champ libre REJETÉ: MatriculePointeuse=503354 — Salarié introuvable
+2026-03-10 13:18:47,132 - hikvision_kelio - INFO - Import champs Bp: 0 succès, 2 rejeté(s)
+2026-03-10 13:18:47,132 - hikvision_kelio - INFO - --- Page 2 (offset=100) ---
+2026-03-10 13:18:47,134 - hikvision_kelio - INFO - Page offset=100: 0 employé(s) récupéré(s)
+2026-03-10 13:18:47,135 - hikvision_kelio - INFO - Plus d'enregistrements à traiter.
+2026-03-10 13:18:47,135 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:18:47,135 - hikvision_kelio - INFO -   Résultat:
+2026-03-10 13:18:47,135 - hikvision_kelio - INFO -     Employés importés       : 1
+2026-03-10 13:18:47,136 - hikvision_kelio - INFO -     Employés rejetés        : 1
+2026-03-10 13:18:47,136 - hikvision_kelio - INFO -     Champs Bp importés      : 0
+2026-03-10 13:18:47,136 - hikvision_kelio - INFO -     Champs Bp rejetés       : 2
+2026-03-10 13:18:47,136 - hikvision_kelio - INFO -     Total traité: 2
+2026-03-10 13:18:47,137 - hikvision_kelio - WARNING -   Détails des erreurs Kelio:
+2026-03-10 13:18:47,137 - hikvision_kelio - WARNING -     MatriculePointeuse=503354 : Salariés actifs en administration du personnel : le nombre maximal est atteint (200)
+2026-03-10 13:18:47,137 - hikvision_kelio - WARNING -     MatriculePointeuse=503353 : Champ libre ou prédéfini invalide
+2026-03-10 13:18:47,137 - hikvision_kelio - WARNING -     MatriculePointeuse=503354 : Salarié introuvable
+2026-03-10 13:18:47,138 - hikvision_kelio - INFO - ============================================================
+2026-03-10 13:18:47,138 - hikvision_kelio - INFO - Terminé.
